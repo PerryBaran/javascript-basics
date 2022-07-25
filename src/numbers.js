@@ -31,10 +31,7 @@ function roundDown(a) {
 }
 
 function absolute(a) {
-  if (a < 0) {
-    return -a;
-  }
-  return a;
+  return Math.abs(a);
 }
 
 function quotient(a, b) {

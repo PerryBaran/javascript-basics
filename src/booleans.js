@@ -3,94 +3,57 @@ function negate(a) {
 }
 
 function both(a, b) {
-  if (a && b) {
-    return true;
-  }
-  return false;
+  return a && b;
 }
 
 function either(a, b) {
-  if (a || b) {
-    return true;
-  }
-  return false;
+  return a || b;
 }
 
 function none(a, b) {
-  if (a || b) {
-    return false;
-  }
-  return true;
+  return !(a || b);
 }
 
 function one(a, b) {
-  if ((a && !b) || (!a && b)) {
-    return true;
-  }
-  return false;
+  return (a && !b) || (!a && b);
 }
 
 function truthiness(a) {
-  if (a) {
-    return true;
-  }
-  return false;
+  return !!a;
 }
 
 function isEqual(a, b) {
-  if (a === b) {
-    return true;
-  }
-  return false;
+  return a === b;
 }
 
 function isGreaterThan(a, b) {
-  if (a > b) {
-    return true;
-  }
-  return false;
+  return a > b;
 }
 
 function isLessThanOrEqualTo(a, b) {
-  if (a <= b) {
-    return true;
-  }
-  return false;
+  return a <= b;
 }
 
 function isOdd(a) {
-  if (a % 2 !== 0) {
-    return true;
-  }
-  return false;
+  return a % 2 !== 0;
 }
 
 function isEven(a) {
-  if (a % 2 === 0) {
-    return true;
-  }
-  return false;
+  return a % 2 === 0;
 }
 
 function isSquare(a) {
-  if (Math.sqrt(a) % 1 === 0) {
-    return true;
-  }
-  return false;
+  return Number.isInteger(Math.sqrt(a));
 }
 
 function startsWith(char, string) {
-  if (string.charAt(0) === char) {
-    return true;
-  }
-  return false;
+  return string.charAt(0) === char;
 }
 
 function containsVowels(string) {
-  const stringArray = string.split('');
-  const { length } = stringArray;
+  const { length } = string;
   for (let i = 0; i < length; i += 1) {
-    const letter = stringArray[i].toLowerCase();
+    const letter = string.charAt(i).toLowerCase();
     if (
       letter === 'a' ||
       letter === 'e' ||
@@ -105,10 +68,7 @@ function containsVowels(string) {
 }
 
 function isLowerCase(string) {
-  if (string.toLowerCase() === string) {
-    return true;
-  }
-  return false;
+  return string.toLowerCase() === string;
 }
 
 module.exports = {
