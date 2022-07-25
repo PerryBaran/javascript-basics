@@ -1,7 +1,7 @@
 const getNthElement = (index, array) => {
   let i = index;
-  const length = array.length - 1;
-  while (i > length) {
+  const highestIndex = array.length - 1;
+  while (i > highestIndex) {
     i -= array.length;
   }
   return array[i];
@@ -48,28 +48,25 @@ const uppercaseWordsInArray = strings => {
 };
 
 const reverseWordsInArray = strings => {
-  const reversed = [];
-  const stringsLength = strings.length;
-  for (let i = 0; i < stringsLength; i += 1) {
-    const string = strings[i].split('');
+  const reversedWords = [];
+  strings.forEach(string => {
     const reversedString = [];
-    for (let j = string.length - 1; j >= 0; j -= 1) {
-      reversedString.push(string[j]);
+    const stringArray = string.split('');
+    for (let i = stringArray.length - 1; i >= 0; i -= 1) {
+      reversedString.push(stringArray[i]);
     }
-    reversed.push(reversedString.join(''));
-  }
-  return reversed;
+    reversedWords.push(reversedString.join(''));
+  });
+  return reversedWords;
 };
 
 const onlyEven = numbers => {
   const evenNumbers = [];
-  const { length } = numbers;
-  for (let i = 0; i < length; i += 1) {
-    const number = numbers[i];
+  numbers.forEach(number => {
     if (number % 2 === 0) {
       evenNumbers.push(number);
     }
-  }
+  });
   return evenNumbers;
 };
 
@@ -81,9 +78,7 @@ const removeNthElement2 = (index, array) => {
 
 const elementsStartingWithAVowel = strings => {
   const vowelArray = [];
-  const { length } = strings;
-  for (let i = 0; i < length; i += 1) {
-    const string = strings[i];
+  strings.forEach(string => {
     const firstLetter = string.charAt(0).toLowerCase();
     if (
       firstLetter === 'a' ||
@@ -94,7 +89,7 @@ const elementsStartingWithAVowel = strings => {
     ) {
       vowelArray.push(string);
     }
-  }
+  });
   return vowelArray;
 };
 
@@ -113,13 +108,13 @@ const sumNumbers = numbers => {
 const sortByLastLetter = strings => {
   const reverseStrings = array => {
     const reversedArray = [];
-    const { length } = array;
-    for (let i = 0; i < length; i += 1) {
-      const stringArray = array[i].split('');
-      stringArray.reverse();
-      const reversedString = stringArray.join('');
+    array.forEach(string => {
+      const reversedString = string
+        .split('')
+        .reverse()
+        .join('');
       reversedArray.push(reversedString);
-    }
+    });
     return reversedArray;
   };
   const reversedStrings = reverseStrings(strings);
