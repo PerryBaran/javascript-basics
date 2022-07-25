@@ -1,62 +1,115 @@
 function negate(a) {
-  // your code here
-};
+  return !a;
+}
 
 function both(a, b) {
-  // your code here
-};
+  if (a && b) {
+    return true;
+  }
+  return false;
+}
 
 function either(a, b) {
-  // your code here
-};
+  if (a || b) {
+    return true;
+  }
+  return false;
+}
 
 function none(a, b) {
-  // your code here
-};
+  if (a || b) {
+    return false;
+  }
+  return true;
+}
 
 function one(a, b) {
-  // your code here
-};
+  if ((a && !b) || (!a && b)) {
+    return true;
+  }
+  return false;
+}
 
 function truthiness(a) {
-  // your code here
-};
+  if (a) {
+    return true;
+  }
+  return false;
+}
 
 function isEqual(a, b) {
-  // your code here
-};
+  if (a === b) {
+    return true;
+  }
+  return false;
+}
 
 function isGreaterThan(a, b) {
-  // your code here
-};
+  if (a > b) {
+    return true;
+  }
+  return false;
+}
 
 function isLessThanOrEqualTo(a, b) {
-  // your code here
-};
+  if (a <= b) {
+    return true;
+  }
+  return false;
+}
 
 function isOdd(a) {
-  // your code here
-};
+  if (a % 2 !== 0) {
+    return true;
+  }
+  return false;
+}
 
 function isEven(a) {
-  // your code here
-};
+  if (a % 2 === 0) {
+    return true;
+  }
+  return false;
+}
 
 function isSquare(a) {
-  // your code here
-};
+  if (Math.sqrt(a) % 1 === 0) {
+    return true;
+  }
+  return false;
+}
 
 function startsWith(char, string) {
-  // your code here
-};
+  if (string.charAt(0) === char) {
+    return true;
+  }
+  return false;
+}
 
 function containsVowels(string) {
-  // your code here
-};
+  const stringArray = string.split('');
+  const { length } = stringArray;
+  for (let i = 0; i < length; i += 1) {
+    const letter = stringArray[i].toLowerCase();
+    if (
+      letter === 'a' ||
+      letter === 'e' ||
+      letter === 'i' ||
+      letter === 'o' ||
+      letter === 'u'
+    ) {
+      return true;
+    }
+  }
+  return false;
+}
 
 function isLowerCase(string) {
-  // your code here
-};
+  if (string.toLowerCase() === string) {
+    return true;
+  }
+  return false;
+}
 
 module.exports = {
   negate,
