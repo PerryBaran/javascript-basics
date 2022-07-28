@@ -80,9 +80,7 @@ const sumNumbers = numbers => {
 };
 
 const sortByLastLetter = strings => {
-  const reversedStrings = reverseWordsInArray(strings);
-  reversedStrings.sort();
-  return reverseWordsInArray(reversedStrings);
+  return reverseWordsInArray(reverseWordsInArray(strings).sort());
 };
 
 module.exports = {
