@@ -36,15 +36,12 @@ const uppercaseWordsInArray = strings => {
 };
 
 const reverseWordsInArray = strings => {
-  const reversedWords = [];
-  strings.forEach(string => {
-    const reversedString = string
+  return strings.map(string =>
+    string
       .split('')
       .reverse()
-      .join('');
-    reversedWords.push(reversedString);
-  });
-  return reversedWords;
+      .join('')
+  );
 };
 
 const onlyEven = numbers => {
@@ -52,23 +49,11 @@ const onlyEven = numbers => {
 };
 
 const removeNthElement2 = (index, array) => {
-  return array.filter(element => array.indexOf(element) !== index);
+  return array.filter((e, i) => i !== index);
 };
 
 const elementsStartingWithAVowel = strings => {
-  return strings.filter(string => {
-    const firstLetter = string.charAt(0).toLowerCase();
-    if (
-      firstLetter === 'a' ||
-      firstLetter === 'e' ||
-      firstLetter === 'i' ||
-      firstLetter === 'o' ||
-      firstLetter === 'u'
-    ) {
-      return true;
-    }
-    return false;
-  });
+  return strings.filter(string => string[0].match(/[aeiou]/i));
 };
 
 const removeSpaces = string => {

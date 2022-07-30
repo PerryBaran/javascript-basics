@@ -51,20 +51,7 @@ function startsWith(char, string) {
 }
 
 function containsVowels(string) {
-  const { length } = string;
-  for (let i = 0; i < length; i += 1) {
-    const letter = string.charAt(i).toLowerCase();
-    if (
-      letter === 'a' ||
-      letter === 'e' ||
-      letter === 'i' ||
-      letter === 'o' ||
-      letter === 'u'
-    ) {
-      return true;
-    }
-  }
-  return false;
+  return !!string.match(/[aeiou]/i);
 }
 
 function isLowerCase(string) {
