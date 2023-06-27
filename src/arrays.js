@@ -1,10 +1,5 @@
 const getNthElement = (index, array) => {
-  let i = index;
-  const highestIndex = array.length - 1;
-  while (i > highestIndex) {
-    i -= array.length;
-  }
-  return array[i];
+  return array[index % array.length];
 };
 
 const arrayToCSVString = array => {
@@ -57,7 +52,7 @@ const elementsStartingWithAVowel = strings => {
 };
 
 const removeSpaces = string => {
-  return string.replace(/ /g, '');
+  return string.replace(/\s/g, '');
 };
 
 const sumNumbers = numbers => {

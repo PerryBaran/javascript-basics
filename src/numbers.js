@@ -35,11 +35,7 @@ function absolute(a) {
 }
 
 function quotient(a, b) {
-  const c = a / b;
-  if (c < 0) {
-    return Math.ceil(c);
-  }
-  return Math.floor(c);
+  return (a - (a % b)) / b;
 }
 
 function remainder(a, b) {
